@@ -1,18 +1,25 @@
-<template>
-  <div class="home">
-    <img src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
-</template>
-
 <script>
+import PkmnHeader from '@/components/header/PkmnHeader'
+import PkmnFooter from '@/components/footer/PkmnFooter'
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'home',
   components: {
-    HelloWorld
+    PkmnHeader,
+    PkmnFooter
   }
 }
 </script>
+<template>
+  <div class="grid-main">
+    <header role="reader">
+      <pkmn-header></pkmn-header>
+    </header>
+    <main>
+      <router-view></router-view>
+    </main>
+    <footer>
+      <pkmn-footer></pkmn-footer>
+    </footer>
+  </div>
+</template>
